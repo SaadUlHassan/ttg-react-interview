@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import TodoList from './containers/TodoList';
@@ -17,10 +17,12 @@ const useStyles = makeStyles(theme => ({
 const Todo = () => {
   const classes = useStyles();
 
+
+
   return (
     <div className={classes.root}>
       <Container maxWidth="sm" className={classes.container}>
-        <h1>To Do App</h1>
+        <Typography variant='h4' color='primary' align='center'>To Do App</Typography>
         <TodoList />
       </Container>
     </div>

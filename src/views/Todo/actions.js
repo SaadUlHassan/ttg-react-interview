@@ -1,11 +1,19 @@
-import { Dispatch } from 'redux';
-
 export const TodoActionTypes = {
   addTodo: 'TODO/ADD',
   deleteTodo: 'TODO/REMOVE',
 };
-export class TodoActions {
-  addTodo = title => {};
+export const TodoActions = {
+  addTodo: title => {
+    return {
+      type: TodoActionTypes.addTodo,
+      payload: title
+    }
+  },
 
-  removeTodo = id => {};
+  removeTodo: tasks => dispatch => {
+    dispatch({
+      type: TodoActionTypes.deleteTodo,
+      payload: tasks
+    })
+  }
 }

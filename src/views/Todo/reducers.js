@@ -2,14 +2,22 @@ import { TodoActionTypes } from './actions';
 import update from 'immutability-helper';
 import { combineReducers } from 'redux';
 
-const defaultState = {};
+const defaultState = {
+  tasks: []
+};
 
 const todoReducer = (state = defaultState, action) => {
   switch (action.type) {
     case TodoActionTypes.addTodo:
-      return state;
+      return {
+        ...state,
+      // tasks: action.payload
+      tasks: [...state.tasks, action.payload]
+    };
     case TodoActionTypes.deleteTodo: {
-      return state;
+      return {
+        tasks: action.payload
+      };
     }
 
     default:

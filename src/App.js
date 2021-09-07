@@ -35,7 +35,8 @@ const App = () => {
           <Box display="flex" flexDirection="column" minHeight="100vh">
             {/* Header Component can be added here*/}
             <Box display="flex" alignContent="center">
-              <img source={logo} className={classes.logo} alt="TabTabGo Logo" />
+              <img src={logo} className={classes.logo} alt="TabTabGo Logo" /> 
+              {/* source is not the attribute name it must be src */}
             </Box>
             <Box display="flex" flex={1} justifyContent="center">
               <Switch>
